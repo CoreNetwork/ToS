@@ -8,11 +8,12 @@ ToS allows to display a message forcing people to read and accept the rules. The
 
 ### Changes by Core Network:
 
-1. Removed the requirement to read rules before accepting. Design your messages to make it apparent that they need to run another command.
-2. ToS message will be also displayed on login. This allows to edit notification frequency to something sane like 15-30 minutes not default 10 seconds.
-3. Mavenized the project so it can be built with Jenkins
+1. Added a config option to remove the requirement to read rules before accepting (`Options.RequireToReadRules`) – it’s off by default.
+2. ToS message will be also displayed on login.
+3. Edited default config messages and config values – disabled all event checks and set notification frequency to 15 minutes.
+4. Mavenized the project so it can be built with Jenkins
 
-Above changes allow to use the plugin as a one-off notification for all players logging into your server and allowing them to unsubscribe once they saw the message. If you want to be strict and actually use this to force acceptance of your ToS/rules, please use the [original version](http://www.spigotmc.org/resources/tos.100/) as our changes remove the strict nature of the plugin (we recommend disabling every event check as well).
+Above changes allow to use the plugin as a one-off notification for all players logging into your server and allowing them to unsubscribe once they saw the message.
 
 Most recent of this plugin can be found at http://build.core-network.us:8080/job/ToS/
 
