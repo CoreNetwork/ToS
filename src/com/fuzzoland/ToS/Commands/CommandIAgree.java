@@ -22,16 +22,18 @@ public class CommandIAgree implements CommandExecutor{
 			if(sender instanceof Player){
 				String playerName = ((Player) sender).getName();
 				PlayerFile playerFile = plugin.playerFiles.get(playerName);
-				if(playerFile.hasRead()){
+				/*if(playerFile.hasRead()){*/
 					if(playerFile.hasAgreed()){
 						sender.sendMessage(plugin.config.getString("Messages.HasAgreed").replaceAll("(&([a-f0-9l-or]))", "\u00A7$2"));
 					}else{
 						plugin.playerFiles.put(playerName, playerFile.setAgreed(true));
 						sender.sendMessage(plugin.config.getString("Messages.JustAgreed").replaceAll("(&([a-f0-9l-or]))", "\u00A7$2"));
 					}
+				/*
 				}else{
 					sender.sendMessage(plugin.config.getString("Messages.HasNotRead").replaceAll("(&([a-f0-9l-or]))", "\u00A7$2"));
 				}
+				*/
 			}else{
 				sender.sendMessage(ChatColor.RED + "You're the console, you don't have rules!");
 			}
