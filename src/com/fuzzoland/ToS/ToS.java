@@ -45,7 +45,6 @@ public class ToS extends JavaPlugin{
 		logger.log(Level.INFO, "[ToS] Commands registered!");
 		loadData();
 		startTasks();
-		startMetrics();
 		logger.log(Level.INFO, "[ToS] Version " + getDescription().getVersion() + " has been enabled.");
 	}
 	
@@ -112,15 +111,6 @@ public class ToS extends JavaPlugin{
 			messageTask.cancel();
 			messageTask = null;
 			logger.log(Level.INFO, "[ToS] Message task stopped!");
-		}
-	}
-	
-	private void startMetrics(){
-		try{
-			new MetricsLite(this).start();
-			logger.log(Level.INFO, "[ToS] Metrics initiated!");
-		}catch (IOException e){
-			e.printStackTrace();
 		}
 	}
 }
