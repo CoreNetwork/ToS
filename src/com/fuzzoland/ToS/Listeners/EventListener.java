@@ -19,6 +19,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerItemHeldEvent;
 import org.bukkit.event.player.PlayerLoginEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.event.player.PlayerPortalEvent;
@@ -40,6 +41,13 @@ public class EventListener implements Listener{
 	public void onPlayerLogin(PlayerLoginEvent event){
 		if(!plugin.playerFiles.containsKey(event.getPlayer().getName())){
 			plugin.playerFiles.put(event.getPlayer().getName(), new PlayerFile());
+		}
+	}
+	
+	@EventHandler
+	public void onPlayerJoin(PlayerJoinEvent event){
+		if(!plugin.playerFiles.get(event.getPlayer().getName()).hasAgreed()){
+			event.getPlayer().sendMessage(plugin.config.getString("Messages.HasNotAgreed").replaceAll("(&([a-f0-9l-or]))", "\u00A7$2"));
 		}
 	}
 	
