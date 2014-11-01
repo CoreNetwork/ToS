@@ -42,7 +42,7 @@ public class EventListener implements Listener{
 			plugin.playerFiles.put(event.getPlayer().getName(), new PlayerFile());
 		}
 		if(!plugin.playerFiles.get(player.getName()).hasAgreed()){
-			player.sendMessage(plugin.config.getString("Messages.HasNotAgreed").replaceAll("(&([a-f0-9l-or]))", "\u00A7$2"));
+			event.getPlayer().sendMessage(plugin.config.getString("Messages.HasNotAgreed").replaceAll("(&([a-f0-9l-or]))", "\u00A7$2"));
 		}
 	}
 	
