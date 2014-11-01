@@ -1,7 +1,8 @@
 Rules:
-- '&c(1) &2Put your rules in a list here.'
-- '&c(2) &6They can have colours!'
-- '&c(3) &2Remember to follow YAML formatting rules.'
+- '&31. Put your rules in a list here.'
+- '&72. They can have colours!'
+- '&33. Remember to follow YAML formatting rules. To use apostrophe, do this: it''s. Easy!'
+- '&7Agree? Type &7/iagree'
 Options:
   Move:
     Deny: false
@@ -10,47 +11,47 @@ Options:
     Deny: false
     Message: false
   BlockInteract:
-    Deny: true
-    Message: true
+    Deny: false
+    Message: false
   EntityInteract:
-    Deny: true
+    Deny: false
     Message: false
   BlockPlace:
-    Deny: true
-    Message: true
+    Deny: false
+    Message: false
   BlockBreak:
-    Deny: true
-    Message: true
+    Deny: false
+    Message: false
   InventoryClick:
-    Deny: true
-    Message: true
+    Deny: false
+    Message: false
   ItemPickup:
-    Deny: true
+    Deny: false
     Message: false
   ItemDrop:
-    Deny: true
-    Message: true
+    Deny: false
+    Message: false
   ItemConsume:
-    Deny: true
-    Message: true
+    Deny: false
+    Message: false
   ItemHeld:
     Deny: false
     Message: false
   ProjectileLaunch:
-    Deny: true
-    Message: true
+    Deny: false
+    Message: false
   Attack:
-    Deny: true
-    Message: true
+    Deny: false
+    Message: false
   Damage:
-    Deny: true
+    Deny: false
     Message: false
   BucketEmpty:
-    Deny: true
-    Message: true
+    Deny: false
+    Message: false
   BucketFill:
-    Deny: true
-    Message: true
+    Deny: false
+    Message: false
   ToggleSneak:
     Deny: false
     Message: false
@@ -58,21 +59,22 @@ Options:
     Deny: false
     Message: false
   ExpChange:
-    Deny: true
+    Deny: false
     Message: false
   PortalUsage:
-    Deny: true
-    Message: true
+    Deny: false
+    Message: false
+  RequireToReadRules: false
 Messages:
-  HasAgreed: '&6You have already agreed to the rules.'
-  HasNotAgreed: '&6Agree to the rules with &c/IAgree&6.'
-  HasNotRead: '&6You must read the rules first with &c/Rules&6!'
-  JustAgreed: '&6Thank you for agreeing to the rules!'
-  DenyMessage: '&4You can''t do this until you''ve agreed to the rules.'
+  HasNotAgreed: '&aPlease read the &6/rules &aand agree with &6/iagree&6.'
+  HasNotRead: '&cYou should read &7/rules &cfirst before agreeing to them.'
+  JustAgreed: '&aThank you for agreeing with our rules, have fun!'
+  HasAgreed: '&7You have already agreed to the rules.'
+  DenyMessage: '&cYou can''t do this until you''ve agreed to the &7/rules.'
 Tasks:
   SaveTask:
     Enabled: true
-    Interval: 600
+    Interval: 900
   MessageTask:
     Enabled: true
-    Interval: 10
+    Interval: 900
